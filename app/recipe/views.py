@@ -9,7 +9,7 @@ from recipe import serializers
 
 class TagViewSet(viewsets.GenericViewSet, mixins.ListModelMixin):
     """Manage tags in the database"""
-    authentication_classes = (TokenAuthentication)
+    authentication_classes = (TokenAuthentication,)
     permissions_classes = (IsAuthenticated,)
     queryset = Tag.objects.all()
     serializer_class = serializers.TagSerializer
